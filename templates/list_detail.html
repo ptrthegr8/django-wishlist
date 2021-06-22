@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block content %}
+<h1>{{wishlist.title}}</h1>
+
+{% if wishlist.creator.id == user.id %}
+<a href="/item/add/"><button>Add an item</button></a>
+{% endif %}
+<ul>
+  {% for item in wishlist.listitems.all %}
+  <li><a href="/item/{{item.id}}/">{{item}}</a></li>
+  {% endfor %}
+</ul>
+{% endblock content %}

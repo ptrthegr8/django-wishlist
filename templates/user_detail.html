@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Your Wishlists</h1>
+{% for list in wishlists %}
+<ul>
+  <li><a href="/list/{{list.id}}/">{{list.title}}</a></li>
+</ul>
+{% endfor %}
+<h1>Your Claimed Items</h1>
+{% for item in claimed_items %}
+<ul>
+  <li><a href="/item/{{item.id}}/">{{item.title}}</a></li>
+</ul>
+{% empty %} No items claimed yet... {% endfor %} {% endblock %}

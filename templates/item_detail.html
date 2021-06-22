@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+<ul>
+  <h1>{{item.title}}</h1>
+  <li>
+    Where to buy:
+    <a href="{{item.url}}">{{item.url}}</a>
+  </li>
+  <li>
+    {% if item.claimed_by %}
+    <button disabled="disabled">Claimed</button>
+    {% else %}
+    <a href="/claim/{{item.id}}/"><button>Claim</button></a>
+    {% endif %}
+  </li>
+</ul>
+{% endblock content %}
