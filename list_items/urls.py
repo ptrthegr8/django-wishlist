@@ -18,7 +18,7 @@ from django.urls import path, include
 from list_items import views
 
 urlpatterns = [
-    path("item/<int:id>/", views.item_detail_view),
-    path("claim/<int:id>/", views.claim_item_view),
-    path("item/add/", views.add_item_view)
+    path("item/<int:id>/", views.item_detail_view, name="item_detail"),
+    path("claim/<int:id>/", views.claim_item_view, name="claim_item"),
+    path("item/add/", views.add_item_view, name="add_item")
 ]

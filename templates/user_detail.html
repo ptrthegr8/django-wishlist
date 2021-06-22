@@ -8,6 +8,6 @@
 <h1>Your Claimed Items</h1>
 {% for item in claimed_items %}
 <ul>
-  <li><a href="/item/{{item.id}}/">{{item.title}}</a></li>
+  <li><a href="/item/{{item.id}}/">{{item.title}}</a><span> -- <a href="/list/{{item.parent.id}}/">{{item.parent}}</a></span></li>
 </ul>
 {% empty %} No items claimed yet... {% endfor %} {% endblock %}

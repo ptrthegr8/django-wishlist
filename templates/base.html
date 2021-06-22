@@ -7,13 +7,13 @@
   </head>
   <body>
     <nav>
-      <a href="/">Home</a>
-      <a href="/signup/">Signup</a>
-      <a href="/login/">Login</a>
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'signup' %}">Signup</a>
+      <a href="{% url 'login' %}">Login</a>
       {% if user.is_authenticated %}
-      <a href="/logout/">Logout</a>
-      <a href="/list/add/">Create a Wishlist</a>
-      <a href="/user/{{user.id}}/">Profile</a>
+      <a href="{% url 'logout' %}">Logout</a>
+      <a href="{% url 'add_wishlist' %}">Create a Wishlist</a>
+      <a href="{% url 'user_detail' user.id %}">Profile</a>
       {% endif %}
     </nav>
     {% block content %} {% endblock content %}

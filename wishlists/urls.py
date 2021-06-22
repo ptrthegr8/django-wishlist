@@ -19,6 +19,6 @@ from wishlists import views
 
 urlpatterns = [
     path("", views.index_view, name="home"),
-    path("list/<int:id>/", views.list_detail_view),
-    path("list/add/", views.add_wishlist_view)
+    path("list/<int:id>/", views.list_detail_view, name="list_detail"),
+    path("list/add/", views.add_wishlist_view, name="add_wishlist"),
 ]
